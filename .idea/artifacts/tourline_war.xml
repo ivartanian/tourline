@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tourline:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="tourline.war">
+      <element id="artifact" artifact-name="tourline:war exploded" />
+    </root>
+  </artifact>
+</component>
