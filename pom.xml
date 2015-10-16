@@ -52,33 +52,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>1.8.2.RELEASE</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <!--  because Spring Data usually comes with a slightly older version of Spring -->
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>4.2.1.RELEASE</version>
+            <artifactId>spring-data-mongodb-log4j</artifactId>
+            <version>1.8.0.RELEASE</version>
         </dependency>
 
-        <!-- HIBERNATE -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>4.3.9.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.9.Final</version>
-        </dependency>
 
         <!-- LOGGING -->
         <dependency>
@@ -142,18 +119,6 @@
                     </webApp>
                 </configuration>
             </plugin>
-
-            <!--<plugin>-->
-            <!--<groupId>org.apache.tomcat.maven</groupId>-->
-            <!--<artifactId>tomcat7-maven-plugin</artifactId>-->
-            <!--<version>2.2</version>-->
-            <!--<configuration>-->
-            <!--<charset>utf-8</charset>-->
-            <!--<server>apache-tomcat-8.0.27</server>-->
-            <!--<url>http://localhost:8080/manager/text</url>-->
-            <!--<path>/tourline</path>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
 
         </plugins>
 
