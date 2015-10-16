@@ -10,9 +10,6 @@ import java.util.List;
 /**
  * Created by super on 10/15/15.
  */
-@Repository
-public interface PersonRepositoryImpl extends PersonRepository, MongoRepository<Person, String> {
-
-
+public interface PersonRepositoryImpl extends MongoRepository<Person, String> {
 
 }

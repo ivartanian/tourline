@@ -27,7 +27,6 @@ import java.net.UnknownHostException;
  */
 @Configuration
 @EnableWebMvc
-@EnableMongoRepositories("com.vartanian.tourline.repository")
 @ComponentScan(value = {"com.vartanian.tourline"})
 @PropertySource("classpath:data-access.properties")
 public class WebConfig extends WebMvcConfigurerAdapter {
