@@ -16,45 +16,25 @@ import java.util.List;
 /**
  * Created by super on 10/15/15.
  */
-//@Service
+@Service
 public class PersonServiceImpl implements PersonService{
 
     @Autowired
-    @Qualifier(value = "personRepositoryImpl")
     private PersonRepository personRepository;
 
     @Override
-    public List<Person> findAll(Class<Person> entityClass) {
-        return personRepository.findAll(entityClass);
+    public List<Person> findAll() {
+        return personRepository.findAll();
     }
 
     @Override
-    public Person insert(Person objectToSave) {
-        return personRepository.insert(objectToSave);
-    }
-
-    @Override
-    public Person findById(Person id, Class<Person> entityClass) {
-        return personRepository.findById(id, entityClass);
-    }
-
-    @Override
-    public WriteResult updateFirst(Query query, Update update, Class<Person> entityClass) {
-        return personRepository.updateFirst(query, update, entityClass);
-    }
-
-    @Override
-    public Person findOne(Query query, Class<Person> entityClass) {
-        return personRepository.findOne(query, entityClass);
-    }
-
-    @Override
-    public WriteResult remove(Person person) {
-        return personRepository.remove(person);
+    public Person findOne(String id) {
+        return personRepository.findOne(id);
     }
 
     @Override
     public void dropCollection(Class<Person> entityClass) {
         personRepository.dropCollection(entityClass);
     }
+
 }

@@ -36,21 +36,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Autowired
     Environment environment;
 
-//    @Bean
-//    public Mongo mongoTamplate() throws UnknownHostException {
-//        return new Mongo("localhost");
-//    }
-//
-//    @Bean
-//    public MongoDbFactory mongoDbFactory() throws Exception {
-//        return new SimpleMongoDbFactory(new Mongo(), "database");
-//    }
-//
-//    @Bean
-//    public MongoTemplate mongoTemplate() throws Exception {
-//        return new MongoTemplate(mongoDbFactory());
-//    }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/WEB-INF/jsp/**").addResourceLocations("/jsp/");

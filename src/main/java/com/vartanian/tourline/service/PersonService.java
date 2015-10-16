@@ -13,17 +13,9 @@ import java.util.List;
  */
 public interface PersonService {
 
-    List<Person> findAll(Class<Person> entityClass);
+    List<Person> findAll();
 
-    Person insert(Person objectToSave);
-
-    Person findById(Person id, Class<Person> entityClass);
-
-    WriteResult updateFirst(Query query, Update update, Class<Person> entityClass);
-
-    Person findOne(Query query, Class<Person> entityClass);
-
-    WriteResult remove(Person person);
+    Person findOne(String id);
 
     void dropCollection(Class<Person> entityClass);
 

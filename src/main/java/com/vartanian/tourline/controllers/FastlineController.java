@@ -31,7 +31,7 @@ public class FastlineController {
     private static final Logger LOG = LogManager.getLogger(FastlineController.class);
 
     @Autowired
-    private MongoTemplate template;
+    private PersonService personService;
 
     @GET
     @RequestMapping(value = "/", method = RequestMethod.GET)
