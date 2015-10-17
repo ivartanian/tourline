@@ -13,8 +13,4 @@ import java.util.List;
  */
 public interface PersonRepositoryImpl extends PersonRepository, MongoRepository<Person, String> {
 
-    @Override
-    @Query("{age : { $lt : 50 }}")
-    void dropCollection(Class<Person> entityClass);
-
 }

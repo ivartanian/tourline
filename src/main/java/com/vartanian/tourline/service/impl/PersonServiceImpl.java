@@ -1,14 +1,9 @@
 package com.vartanian.tourline.service.impl;
 
-import com.mongodb.WriteResult;
 import com.vartanian.tourline.models.Person;
 import com.vartanian.tourline.repository.PersonRepository;
-import com.vartanian.tourline.repository.springdata.PersonRepositoryImpl;
 import com.vartanian.tourline.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,8 +28,18 @@ public class PersonServiceImpl implements PersonService{
     }
 
     @Override
-    public void dropCollection(Class<Person> entityClass) {
-        personRepository.dropCollection(entityClass);
+    public Person insert(Person entity) {
+        return personRepository.insert(entity);
+    }
+
+    @Override
+    public void delete(Person entity) {
+        personRepository.delete(entity);
+    }
+
+    @Override
+    public Person findByName(String name) {
+        return personRepository.findByName(name);
     }
 
 }

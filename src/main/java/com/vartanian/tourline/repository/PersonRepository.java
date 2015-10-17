@@ -18,5 +18,9 @@ public interface PersonRepository {
 
     Person findOne(String id);
 
-    void dropCollection(Class<Person> entityClass);
+    Person insert(Person entity);
+
+    void delete(Person entity);
+
+    Person findByName(String name);
 }

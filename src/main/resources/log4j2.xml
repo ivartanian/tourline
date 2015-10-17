@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
     <Properties>
-        <Property name="LOG_DIR">../logs/fastline</Property>
+        <Property name="LOG_DIR">logs/tourline</Property>
         <Property name="ARCHIVE">${LOG_DIR}/archive</Property>
         <Property name="PATTERN">%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{1} (%F:%L) - %m%n</Property>
     </Properties>
@@ -10,25 +10,14 @@
             <PatternLayout pattern="${PATTERN}"/>
         </Console>
 
-        <RollingFile name="fileWriter"
-                     fileName="${LOG_DIR}/log.txt"
-                     filePattern="${ARCHIVE}/%d{yyyy-MM-dd-hh-mm}-log.txt.gz"
-                     append="true">
+        <File name="fileWriter" fileName="log.txt" append="true">
             <PatternLayout pattern="${PATTERN}"/>
-            <Policies>
-                <TimeBasedTriggeringPolicy/>
-            </Policies>
-        </RollingFile>
+        </File>
     </Appenders>
     <Loggers>
-        <Logger name="com.vartanian" level="debug">
-            <AppenderRef ref="fileWriter" level="debug"/>
-        </Logger>
-        <Logger name="org.springframework" level="debug">
-            <AppenderRef ref="STDOUT" level="debug"/>
-        </Logger>
         <Root level="debug">
             <AppenderRef ref="STDOUT" level="debug"/>
+            <AppenderRef ref="fileWriter" level="debug"/>
         </Root>
     </Loggers>
 </Configuration>
