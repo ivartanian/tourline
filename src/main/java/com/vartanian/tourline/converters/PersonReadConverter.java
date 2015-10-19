@@ -17,7 +17,7 @@ public class PersonReadConverter implements Converter<DBObject, Person> {
 
     public Person convert(DBObject source) {
         Person p = new Person((String) source.get("name"), (int) source.get("age"), (List<Adress>) source.get("adresses"));
-        p.setId((ObjectId) source.get("_id"));
+        p.setId(source.get("_id").toString());
         return p;
     }
 }

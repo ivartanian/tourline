@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Adress extends BasicDBObject implements Serializable {
 
     @Id
-    private ObjectId id;
+    private String id;
     private String street;
     private String country;
 
@@ -26,11 +26,11 @@ public class Adress extends BasicDBObject implements Serializable {
     public Adress() {
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 

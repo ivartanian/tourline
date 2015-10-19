@@ -17,7 +17,7 @@ public class AdressReadConverter implements Converter<DBObject, Adress> {
 
     public Adress convert(DBObject source) {
         Adress adress = new Adress((String) source.get("street"), (String) source.get("country"));
-        adress.setId((ObjectId) source.get("_id"));
+        adress.setId(source.get("_id").toString());
         return adress;
     }
 }
