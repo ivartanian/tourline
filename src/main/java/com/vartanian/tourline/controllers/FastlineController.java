@@ -47,7 +47,8 @@ public class FastlineController {
         LOG.info("Found: " + p);
 
         // Delete
-        adressRepository.delete(adresses);
+        List<Adress> all = adressRepository.findAll();
+        adressRepository.delete(all);
 
         // Delete
         personService.delete(p);

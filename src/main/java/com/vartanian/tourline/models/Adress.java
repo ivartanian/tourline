@@ -11,7 +11,7 @@ import java.io.Serializable;
  * Created by super on 10/15/15.
  */
 @Document(collection="adress")
-public class Adress extends BasicDBObject implements Serializable {
+public class Adress implements Serializable {
 
     @Id
     private String id;

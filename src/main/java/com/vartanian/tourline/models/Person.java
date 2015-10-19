@@ -2,6 +2,7 @@ package com.vartanian.tourline.models;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -28,6 +29,7 @@ public class Person implements Serializable {
     public Person() {
     }
 
+    @PersistenceConstructor
     public Person(String name, int age, List<Adress> adresses) {
         this.name = name;
         this.age = age;

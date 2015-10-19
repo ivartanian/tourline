@@ -11,10 +11,10 @@
               <option value="localhost:27017" />
             </list>
           </option>
-          <option name="userDatabase" value="database" />
+          <option name="shellWorkingDir" value="C:\Program Files\MongoDB\Server\3.0\bin" />
         </ServerConfiguration>
       </list>
     </option>
-    <option name="shellPath" value="/usr/bin/mongo" />
+    <option name="shellPath" value="C:\Program Files\MongoDB\Server\3.0\bin\mongo.exe" />
   </component>
 </project>
