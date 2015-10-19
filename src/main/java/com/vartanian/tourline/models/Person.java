@@ -1,32 +1,44 @@
 package com.vartanian.tourline.models;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by super on 10/15/15.
  */
 @Document(collection="persons")
-public class Person {
+public class Person implements Serializable {
 
     @Id
-    private String id;
+    private ObjectId id;
+
+    @Indexed
     private String name;
+
     private int age;
+
+    private List<Adress> adresses;
 
     public Person() {
     }
 
-    public Person(String name, int age) {
+    public Person(String name, int age, List<Adress> adresses) {
         this.name = name;
         this.age = age;
+        this.adresses = adresses;
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -44,6 +56,14 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public List<Adress> getAdresses() {
+        return adresses;
+    }
+
+    public void setAdresses(List<Adress> adresses) {
+        this.adresses = adresses;
     }
 
     @Override
