@@ -1,6 +1,5 @@
 package com.vartanian.tourline.models;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -24,16 +23,17 @@ public class Person implements Serializable {
 
     private int age;
 
-    private List<Adress> adresses;
+    @Indexed
+    @DBRef
+    private List<Address> addresses;
 
     public Person() {
     }
 
-    @PersistenceConstructor
-    public Person(String name, int age, List<Adress> adresses) {
+    public Person(String name, int age, List<Address> addresses) {
         this.name = name;
         this.age = age;
-        this.adresses = adresses;
+        this.addresses = addresses;
     }
 
     public String getId() {
@@ -60,12 +60,12 @@ public class Person implements Serializable {
         this.age = age;
     }
 
-    public List<Adress> getAdresses() {
-        return adresses;
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    public void setAdresses(List<Adress> adresses) {
-        this.adresses = adresses;
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
 
     @Override

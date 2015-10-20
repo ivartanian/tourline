@@ -10,20 +10,20 @@ import java.io.Serializable;
 /**
  * Created by super on 10/15/15.
  */
-@Document(collection="adress")
-public class Adress implements Serializable {
+@Document(collection="address")
+public class Address implements Serializable {
 
     @Id
     private String id;
     private String street;
     private String country;
 
-    public Adress(String street, String country) {
+    public Address(String street, String country) {
         this.street = street;
         this.country = country;
     }
 
-    public Adress() {
+    public Address() {
     }
 
     public String getId() {

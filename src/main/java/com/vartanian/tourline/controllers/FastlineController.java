@@ -1,6 +1,6 @@
 package com.vartanian.tourline.controllers;
 
-import com.vartanian.tourline.models.Adress;
+import com.vartanian.tourline.models.Address;
 import com.vartanian.tourline.models.Person;
 import com.vartanian.tourline.repository.springdata.AdressRepositoryImpl;
 import com.vartanian.tourline.service.PersonService;
@@ -34,25 +34,25 @@ public class FastlineController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView helloWorld() {
 
-        List<Adress> adresses = Arrays.asList(new Adress("Kuchera", "Ukraine"), new Adress("Mira", "Ukraine"));
-        adressRepository.insert(adresses);
-        Person p = new Person("Joe", 34, adresses);
+        List<Address> addresses = Arrays.asList(new Address("Kuchera", "Ukraine"), new Address("Mira", "Ukraine"));
+//        adressRepository.insert(addresses);
+        Person p = new Person("Joe", 34, addresses);
 
         // Insert is used to initially store the object into the database.
         personService.insert(p);
         LOG.info("Insert: " + p);
 
         // Find
-        p = personService.findByName("Joe");
-        LOG.info("Found: " + p);
+        Person p1 = personService.findByName("Joe");
+        LOG.info("Found: " + p1);
 
         // Delete
-        List<Adress> all = adressRepository.findAll();
-        adressRepository.delete(all);
+//        List<Address> all = adressRepository.findAll();
+//        adressRepository.delete(all);
 
         // Delete
-        personService.delete(p);
-        LOG.info("Delete: " + p);
+        personService.delete(p1);
+        LOG.info("Delete: " + p1);
 
         // Check that deletion worked
         List<Person> people =  personService.findAll();
